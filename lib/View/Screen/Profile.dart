@@ -1,14 +1,13 @@
 import 'package:checkupapp/Controller/auth/userInfo_controller.dart';
 import 'package:checkupapp/Core/Class/handlingdataview.dart';
 import 'package:checkupapp/Core/Constant/Color.dart';
+import 'package:checkupapp/View/Widget/Auth/customdrawer.dart';
 import 'package:checkupapp/View/Widget/Auth/logoauth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../Widget/Auth/customdrawer.dart';
-
 class ProfileScreen extends StatelessWidget {
-  ProfileScreen({super.key});
+  const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +29,6 @@ class ProfileScreen extends StatelessWidget {
         body: GetBuilder<UserInfoController>(
           builder: (controller) {
             return ListView(
-
               children: [
                 HandlingDataView(
                   statusRequest: controller.statusRequest,
@@ -87,42 +85,42 @@ class ProfileScreen extends StatelessWidget {
                           const SizedBox(
                             height: 20,
                           ),
-                      controller.checks.length==0?Container():
-                          Expanded(
-                            child: Card(
-                                child: ListView.separated(
-                                    separatorBuilder: (context, index) {
-                                      return const Divider(
-                                        height: 15,
-                                        thickness: 5,
-                                        color: AppColor.primaryColor,
-                                      );
-                                    },
-                                    itemCount:
-                                        controller.checks.length,
-                                    itemBuilder: (context, index) {
-                                      return Column(
-                                        children: [
-                                          Container(
-                                            height: 200,
-                                            width: 200,
-                                            child: Image.network(
-                                              '${controller.data['check_results'][index]['image_url']}',
-                                              fit: BoxFit.fill,
-                                            ),
-                                          ),
-                                          Text(
-                                            "${controller.data['check_results'][index]['check_result']} ",
-                                            textAlign: TextAlign.center,
-                                            style: const TextStyle(
-                                              fontSize: 25,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                        ],
-                                      );
-                                    })),
-                          ),
+                          controller.checks.length == 0
+                              ? Container()
+                              : Expanded(
+                                  child: Card(
+                                      child: ListView.separated(
+                                          separatorBuilder: (context, index) {
+                                            return const Divider(
+                                              height: 15,
+                                              thickness: 5,
+                                              color: AppColor.primaryColor,
+                                            );
+                                          },
+                                          itemCount: controller.checks.length,
+                                          itemBuilder: (context, index) {
+                                            return Column(
+                                              children: [
+                                                Container(
+                                                  height: 200,
+                                                  width: 200,
+                                                  child: Image.network(
+                                                    '${controller.data['check_results'][index]['image_url']}',
+                                                    fit: BoxFit.fill,
+                                                  ),
+                                                ),
+                                                Text(
+                                                  "${controller.data['check_results'][index]['check_result']} ",
+                                                  textAlign: TextAlign.center,
+                                                  style: const TextStyle(
+                                                    fontSize: 25,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
+                                              ],
+                                            );
+                                          })),
+                                ),
                         ],
                       ),
                     ),

@@ -15,37 +15,24 @@ import 'View/Screen/Auth/VerifycodeSignUp.dart';
 import 'View/Screen/Auth/success_signup.dart';
 import 'View/Screen/Question/QuestionView.dart';
 import 'View/Screen/onBoarding.dart';
-import 'View/Screen/upload_image/upload_image.dart';
 
 List<GetPage<dynamic>>? routes = [
-  GetPage(name: "/", page: () => const Language() , middlewares: [
-    MyMiddleWare()
-  ]),
+  GetPage(
+      name: "/", page: () => const Language(), middlewares: [MyMiddleWare()]),
   GetPage(name: AppRoutes.login, page: () => const Login()),
   GetPage(name: AppRoutes.signUp, page: () => const SignUp()),
   GetPage(name: AppRoutes.forgetPassword, page: () => const ForgetPassword()),
   GetPage(name: AppRoutes.verfiyCode, page: () => const VerfiyCode()),
   GetPage(name: AppRoutes.resetPassword, page: () => const ResetPassword()),
-  GetPage(name: AppRoutes.successResetpassword, page: () => const SuccessResetPassword()),
+  GetPage(
+      name: AppRoutes.successResetpassword,
+      page: () => const SuccessResetPassword()),
   GetPage(name: AppRoutes.successSignUp, page: () => const SuccessSignUp()),
-  GetPage(name: AppRoutes.onboarding, page: () =>  onBoarding()),
-  GetPage(name: AppRoutes.verifyCodeSignUp, page: () => const VerfiyCodeSignUp()),
+  GetPage(name: AppRoutes.onboarding, page: () => onBoarding()),
+  GetPage(
+      name: AppRoutes.verifyCodeSignUp, page: () => const VerfiyCodeSignUp()),
   GetPage(name: AppRoutes.homepage, page: () => const Home()),
-  GetPage(name: AppRoutes.Profile, page: () =>  ProfileScreen()),
-  GetPage(name: AppRoutes.QuestionView, page: () =>  QuestionView()),
-  GetPage(name: AppRoutes.UploadImage, page: () =>  UploadImage()),
+  GetPage(name: AppRoutes.Profile, page: () => ProfileScreen()),
+  GetPage(name: AppRoutes.QuestionView, page: () => QuestionView()),
+  GetPage(name: AppRoutes.UploadImage, page: () => UploadImage()),
 ];
-
-// Map<String, Widget Function(BuildContext)> routes = {
-//   AppRoutes.login: (context) =>const Login(),
-//   AppRoutes.signUp: (context) => const SignUp() ,
-//   AppRoutes.forgetPassword: (context) => const ForgetPassword(),
-//   AppRoutes.verfiyCode: (context) => const VerfiyCode(),
-//   AppRoutes.resetPassword: (context) => const ResetPassword(),
-//   AppRoutes.successResetpassword: (context) => const SuccessResetPassword(),
-//   AppRoutes.successSignUp: (context) => const SuccessSignUp(),
-//   AppRoutes.verifyCodeSignUp: (context) => const VerfiyCodeSignUp(),
-//
-//   AppRoutes.onboarding: (context) => const onBoarding(),
-//
-// };
